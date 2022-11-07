@@ -6,6 +6,7 @@ import Component from '@glimmer/component';
 export default class MyComponent
   extends Component {
 
+  // error  Replace `⏎⏎⏎····<h1>···Hello·{{this.who}}.·</h1>⏎··` with `<h1> Hello {{this.who}}. </h1>`  prettier
         <template>
 
 
@@ -13,8 +14,11 @@ export default class MyComponent
   </template>
 
 
-
+      // NOTE: no Prettier error because ember-template-lint prettier plugin only prettifies the template portion of the file
       get who() {
         return this.args.who;
       }
+
+      // error  Expected to call 'super()'  constructor-super
+      constructor() {}
 }
